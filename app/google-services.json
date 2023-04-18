@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "426247051357",
+    "project_id": "remindme-f23c7",
+    "storage_bucket": "remindme-f23c7.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:426247051357:android:51ea6fd7e762dd5c69d5b4",
+        "android_client_info": {
+          "package_name": "com.example.remindme"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "426247051357-5b64lg0bn2r5eu60o3lcl3qckathnlk8.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.remindme",
+            "certificate_hash": "97ab44feb03fedc4770e7f86738c7795ebad5f04"
+          }
+        },
+        {
+          "client_id": "426247051357-rucu2gv80v3922q4jlmoj198gbalmra2.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBl4xskYbaQNXj_097I7DSswUC7EABO2pA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "426247051357-rucu2gv80v3922q4jlmoj198gbalmra2.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

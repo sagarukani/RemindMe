@@ -1,3 +1,12 @@
 <resources>
     <string name="app_name">RemindMe</string>
+    <string name="sign_in_with_google">Sign in with google</string>
+    <string name="login_with">Login with</string>
+    <string name="btn_login">Login</string>
+    <string name="enter_password">Enter Password</string>
+    <string name="enter_email">Enter Email</string>
+    <string name="register">Register</string>
+    <string name="or">Or</string>
+    <string name="confirm_password">Confirm Password</string>
+    <string name="enter_name">Enter Name</string>
 </resources>
