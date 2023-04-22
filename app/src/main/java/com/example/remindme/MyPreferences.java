@@ -3,6 +3,10 @@ package com.example.remindme;
 import android.content.Context;
 import android.content.SharedPreferences;
 
+
+/**
+ * Shared preference to store user data
+ */
 public class MyPreferences {
 
     private static MyPreferences myPreferences;
@@ -15,6 +19,7 @@ public class MyPreferences {
         editor.apply();
     }
 
+    // clear preference
     public void clear(){
         editor.clear();
     }

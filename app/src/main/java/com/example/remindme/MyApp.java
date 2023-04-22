@@ -6,6 +6,9 @@ import androidx.lifecycle.LifecycleObserver;
 
 import com.google.firebase.FirebaseApp;
 
+/**
+ * Application class
+ */
 public class MyApp extends Application implements LifecycleObserver {
 
     private MyPreferences myPreferences;

@@ -6,6 +6,9 @@ import androidx.room.PrimaryKey;
 
 import java.sql.Date;
 
+/**
+ * Notes or reminder entity class of room database
+ */
 @Entity(tableName = "notes")
 public class Notes {
 

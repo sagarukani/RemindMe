@@ -59,6 +59,7 @@ import java.util.*;
 
 public class HomeFragment extends Fragment implements ReminderAdapter.ItemClickListener{
 
+    //variables
     private HorizontalCalendar horizontalCalendar;
     private LinearLayout llAddReminder;
     private HomeViewModal viewModal;
@@ -78,6 +79,8 @@ public class HomeFragment extends Fragment implements ReminderAdapter.ItemClickL
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
+        //initialization of variables and views
+
         myPreferences  = MyPreferences.getPreferences(getContext());
 
         llAddReminder = view.findViewById(R.id.llAddReminder);
@@ -87,7 +90,9 @@ public class HomeFragment extends Fragment implements ReminderAdapter.ItemClickL
             showDialog(getContext());
         });
 
+        //view model for observing live data
         viewModal = ViewModelProviders.of(this).get(HomeViewModal.class);
+
 
         viewModal.getAllCourses().observe(getViewLifecycleOwner(), notes -> {
             Log.d("TAG", new Gson().toJson(notes));
@@ -106,6 +111,7 @@ public class HomeFragment extends Fragment implements ReminderAdapter.ItemClickL
             createNotificationChannel();
         }
 
+        //setting of RecyclerView
         adapter = new ReminderAdapter();
         rvNotes.setHasFixedSize(true);
         rvNotes.setLayoutManager(new LinearLayoutManager(getContext()));
@@ -113,6 +119,7 @@ public class HomeFragment extends Fragment implements ReminderAdapter.ItemClickL
         adapter.addItemClickListener(this);
     }
 
+    //Add reminder dialog
     private void showDialog(Context context) {
         final Dialog dialog = new Dialog(context);
         WindowManager.LayoutParams lp = new WindowManager.LayoutParams();
@@ -174,6 +181,7 @@ public class HomeFragment extends Fragment implements ReminderAdapter.ItemClickL
         dialog.getWindow().setAttributes(lp);
     }
 
+    //scheduling notification at specific time
     @RequiresApi(api = Build.VERSION_CODES.M)
     private void scheduleNotification(Notes notes) {
         Intent intent = new Intent(getContext().getApplicationContext(), NotificationClass.class);
@@ -198,6 +206,7 @@ public class HomeFragment extends Fragment implements ReminderAdapter.ItemClickL
         );
     }
 
+    //getting time in milliseconds from date and time
     private Long getTime(String s) {
         try {
             SimpleDateFormat format = new SimpleDateFormat("dd-MM-yyyy K:mm a", Locale.getDefault());
@@ -212,6 +221,7 @@ public class HomeFragment extends Fragment implements ReminderAdapter.ItemClickL
         }
     }
 
+    //Creating notification channel
     @RequiresApi(api = Build.VERSION_CODES.O)
     private void createNotificationChannel() {
         String name = "Notification Channel";
@@ -228,6 +238,7 @@ public class HomeFragment extends Fragment implements ReminderAdapter.ItemClickL
                              Bundle savedInstanceState) {
         View rootView = inflater.inflate(R.layout.fragment_home, container, false);
 
+        //Used and initialize horizontal calendar
         Calendar startDate = Calendar.getInstance();
         startDate.add(Calendar.MONTH, -1);
 
@@ -261,6 +272,7 @@ public class HomeFragment extends Fragment implements ReminderAdapter.ItemClickL
         return rootView;
     }
 
+    //RecyclerView item click
     @Override
     public void onItemClick(View v,int position, Notes notes) {
         if(v.getId()==R.id.ivDelete){

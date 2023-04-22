@@ -8,9 +8,9 @@ import android.content.Intent;
 
 import androidx.core.app.NotificationCompat;
 
-
-
-
+/**
+ * Broadcast receiver to receive broadcast from alarm manager and notification
+ */
 public class NotificationClass extends BroadcastReceiver {
 
     @Override

@@ -7,20 +7,22 @@ import androidx.lifecycle.LiveData;
 
 import java.util.List;
 
-public class CourseRepository {
+/**
+ * Reminder repository
+ */
+public class ReminderRepository {
 
     // below line is the create a variable
     // for dao and list for all courses.
     private Dao dao;
-    private LiveData<List<Notes>> allCourses;
-    private LiveData<List<Notes>> searchList;
+    private LiveData<List<Notes>> allReminders;
 
     // creating a constructor for our variables
     // and passing the variables to it.
-    public CourseRepository(Application application) {
+    public ReminderRepository(Application application) {
         CourseDatabase database = CourseDatabase.getInstance(application);
         dao = database.Dao();
-        allCourses = dao.getAllCourses();
+        allReminders = dao.getAllCourses();
     }
 
     public LiveData<List<Notes>> getSearchList(String search){
@@ -48,8 +50,8 @@ public class CourseRepository {
     }
 
     // below method is to read all the courses.
-    public LiveData<List<Notes>> getAllCourses() {
-        return allCourses;
+    public LiveData<List<Notes>> getAllReminders() {
+        return allReminders;
     }
 
     // we are creating a async task method to insert new course.

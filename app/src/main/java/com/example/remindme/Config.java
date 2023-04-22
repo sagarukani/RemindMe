@@ -1,5 +1,8 @@
 package com.example.remindme;
 
+/**
+ * Static constants
+ */
 public class Config {
     public static final String SHARED_PREFERENCES_NAME = "com.example.remindme";
     public static final String USER_NAME = "name";

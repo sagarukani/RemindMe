@@ -9,6 +9,9 @@ import androidx.room.Room;
 import androidx.room.RoomDatabase;
 import androidx.sqlite.db.SupportSQLiteDatabase;
 
+/**
+ *  Database creation
+ */
 @Database(entities = {Notes.class}, version = 1)
 public abstract class CourseDatabase extends RoomDatabase {
 
@@ -32,7 +35,7 @@ public abstract class CourseDatabase extends RoomDatabase {
                     // we are creating a database builder and passing
                     // our database class with our database name.
                     Room.databaseBuilder(context.getApplicationContext(),
-                                    CourseDatabase.class, "course_database")
+                                    CourseDatabase.class, "reminder_database")
                             // below line is use to add fall back to
                             // destructive migration to our database.
                             .fallbackToDestructiveMigration()

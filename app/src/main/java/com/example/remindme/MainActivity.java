@@ -14,14 +14,20 @@ import com.example.remindme.home.SearchFragment;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.navigation.NavigationBarView;
 
+/**
+ * Home page
+ */
 public class MainActivity extends AppCompatActivity implements BottomNavigationView.OnNavigationItemSelectedListener, NavigationBarView.OnItemReselectedListener {
 
+    //bottom navigation
     BottomNavigationView bottomNavigationView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        //setting bottom navigation
         bottomNavigationView = findViewById(R.id.bNav);
         bottomNavigationView.getMenu().findItem(R.id.home).setChecked(true);
         bottomNavigationView.setOnItemSelectedListener(this);

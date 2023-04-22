@@ -1,5 +1,7 @@
 package com.example.remindme;
 
+
+//User class to store info of logged in user
 public class User {
     private String fullName;
     private String email;

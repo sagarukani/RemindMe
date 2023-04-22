@@ -13,6 +13,9 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
+/**
+ * Register user activity
+ */
 public class RegisterActivity extends AppCompatActivity {
 
     private Button btnRegister;
@@ -36,6 +39,7 @@ public class RegisterActivity extends AppCompatActivity {
 
     private void onClick() {
         btnRegister.setOnClickListener(v -> {
+            //Creating new user
             mAuth.createUserWithEmailAndPassword(etEmail.getText().toString(), etConfirmPassword.getText().toString())
                     .addOnSuccessListener(authResult -> {
                         //save user to the database

@@ -9,8 +9,7 @@ import androidx.room.Update;
 
 import java.util.List;
 
-// Adding annotation
-// to our Dao class
+
 @androidx.room.Dao
 public interface Dao {
 

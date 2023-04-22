@@ -11,9 +11,11 @@ import android.widget.Toast;
 
 import com.google.firebase.FirebaseApp;
 import com.google.firebase.auth.FirebaseAuth;
-
+/**
+ * Login Activity
+ */
 public class LoginActivity extends AppCompatActivity {
-
+    //Variables
     private FirebaseAuth auth;
     private Button btnLogin, btnRegister;
     private EditText etEmail, etPassword;
@@ -26,15 +28,17 @@ public class LoginActivity extends AppCompatActivity {
         initView();
         onClick();
 
+        // firebase auth initialization
         auth = FirebaseAuth.getInstance(FirebaseApp.getInstance());
 
-        // Check if user is already signed in
+        //check if user already login
         if (auth.getCurrentUser() != null) {
             startActivity(new Intent(this, MainActivity.class));
             finish();
         }
     }
 
+    //on click on buttons
     private void onClick() {
         btnLogin.setOnClickListener(v -> {
             auth.signInWithEmailAndPassword(etEmail.getText().toString(), etPassword.getText().toString())
@@ -52,6 +56,7 @@ public class LoginActivity extends AppCompatActivity {
         });
     }
 
+    //initializing view
     private void initView() {
         btnLogin = findViewById(R.id.btnLogin);
         btnRegister = findViewById(R.id.btnRegister);

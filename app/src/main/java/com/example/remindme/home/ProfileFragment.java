@@ -88,6 +88,7 @@ public class ProfileFragment extends Fragment implements CompoundButton.OnChecke
         });
     }
 
+    //For getting result of image picker
     @Override
     public void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
@@ -106,6 +107,7 @@ public class ProfileFragment extends Fragment implements CompoundButton.OnChecke
         }
     }
 
+    //Saving image into cache memory
     public static String saveToCacheMemory(Activity activity, Bitmap bitmapImage){
 
         SimpleDateFormat mDateFormat = new SimpleDateFormat("yyyyMMddHHmmss", Locale.US);
@@ -138,6 +140,7 @@ public class ProfileFragment extends Fragment implements CompoundButton.OnChecke
         return mypath.getAbsolutePath();
     }
 
+    //saving all data of user in preference
     @Override
     public void onDestroy() {
         super.onDestroy();
@@ -160,6 +163,7 @@ public class ProfileFragment extends Fragment implements CompoundButton.OnChecke
         return rootView;
     }
 
+    //SwitchCompact listener
     @Override
     public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
         myPreferences.setIsNotification(isChecked);

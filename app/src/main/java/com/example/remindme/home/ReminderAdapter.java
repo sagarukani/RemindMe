@@ -16,6 +16,9 @@ import com.example.remindme.R;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * RecyclerView Adapter
+ */
 public class ReminderAdapter extends RecyclerView.Adapter<ReminderAdapter.ViewHolder> {
 
     private List<Notes> listdata = new ArrayList<>();
@@ -30,6 +33,7 @@ public class ReminderAdapter extends RecyclerView.Adapter<ReminderAdapter.ViewHo
         void onItemClick(View v,int position,Notes notes);
     }
 
+    //for adding list into RecyclerView
     public void AddAllList(List<Notes> list){
         listdata = list;
         notifyDataSetChanged();

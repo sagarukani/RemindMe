@@ -32,8 +32,12 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 
+/**
+ * Search fragment for searching notes
+ */
 public class SearchFragment extends Fragment implements ReminderAdapter.ItemClickListener {
 
+    //variables
     RecyclerView rvNotes;
     ImageView ivSearch;
     TextView tvNoData;
@@ -57,6 +61,7 @@ public class SearchFragment extends Fragment implements ReminderAdapter.ItemClic
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
+        //initializing variables and iews
         rvNotes = view.findViewById(R.id.rvNotes);
         ivSearch = view.findViewById(R.id.ivSearch);
         etSearch = view.findViewById(R.id.etSearch);
@@ -66,6 +71,8 @@ public class SearchFragment extends Fragment implements ReminderAdapter.ItemClic
         viewModal = ViewModelProviders.of(this).get(HomeViewModal.class);
 
         viewModelData = viewModal.search("");
+
+        //observing view model
         viewModal.getAllCourses().observe(getViewLifecycleOwner(), notes -> {
             Log.d("TAG", new Gson().toJson(notes));
             noteList = notes;
@@ -79,6 +86,7 @@ public class SearchFragment extends Fragment implements ReminderAdapter.ItemClic
             }
         });
 
+        //EditText change listener
         etSearch.addTextChangedListener(new TextWatcher() {
 
             @Override
@@ -108,6 +116,7 @@ public class SearchFragment extends Fragment implements ReminderAdapter.ItemClic
             }
         });
 
+        //Setting up adapter
         adapter = new ReminderAdapter();
         rvNotes.setHasFixedSize(true);
         rvNotes.setLayoutManager(new LinearLayoutManager(getContext()));
@@ -115,6 +124,8 @@ public class SearchFragment extends Fragment implements ReminderAdapter.ItemClic
         adapter.addItemClickListener(this);
     }
 
+
+    //Search function
     private void searchList(String s) {
         List<Notes> notes = new ArrayList<>();
         for (int i = 0; i < noteList.size(); i++) {
